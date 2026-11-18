@@ -14,7 +14,7 @@ client = OpenAI(
 )
 
 col = chromadb.PersistentClient(
-    path="./cars_db"
+path=os.path.abspath(os.path.join(os.path.dirname(__file__), "cars_db"))
 ).get_collection("car_data")
 
 # 2. Streamlit Interface
